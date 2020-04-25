@@ -77,7 +77,7 @@ Finally, both datasets were in a format that was not just aligned to one another
  <center><i>Reserved space for future example tables</i></center>
 
 This is our first, brave step, towards our end-goal.    
-Getting our idea, around the data provided around us, then using the proper skillset and techniques, <i>(also provided abundantly with the fine example of IBM's courses)</i>, in order to have that idea tell a story.  
+Getting our idea, around the data provided throughout the net, then using the proper skillset and techniques, <i>(also provided abundantly with the fine example of IBM's courses)</i>, in order to have that idea tell a story.  
 A Digital Story of a Data Scientist.
 
 
