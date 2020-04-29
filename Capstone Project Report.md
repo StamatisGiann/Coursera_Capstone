@@ -1,5 +1,6 @@
+<a id='Top'></a>
 # IBM Applied Data Science Capstone Project
-## Week 4 Report - 1st Draft
+## Week 5 Report
 
 ### Project Title: Clustering for Similarities in NYC & Toronto<br><br>
 #### Table of Contents
@@ -27,6 +28,8 @@ We will be using our newfound techniques in order to see whether these two citie
 If we're looking at this from a business perspective, let's say we have a successful business in either one cities neighbourhood; using these tools, we can get a first glance at some potential candidate locations in the other city.<br>
 The same principles can be applied even if we are just travellers, students, employees or anything for that matter, just looking how to manage a city transition between these two. Nothing feels better than home, but if, say, we have to move from NYC to Toronto (or vice versa) this can help make this big change more tolerable. <br>
 I hope you enjoy our journey!
+<br><br><br>
+[Back to top](#Top)
 
 <a id='PartTwo'></a>
 *****
@@ -47,6 +50,8 @@ Here we used FourSquare's API to obtain information about the venues in our citi
 <i> Example of the returned venues data, before any manipulation </i><br>
 
 <img src="Images/venuedata.jpg">
+<br><br><br>
+[Back to top](#Top)
 
 ##### 2.2 Data Preparation
 
@@ -64,6 +69,8 @@ Here we used FourSquare's API to obtain information about the venues in our citi
  
 <i> Example of the Toronto data with coords </i><br>
 <img src="Images/torontofirstdata.jpg">
+<br><br><br>
+[Back to top](#Top)
 
 **A. Venues data**  
 
@@ -96,6 +103,8 @@ Finally, both datasets were in a format that was not just aligned to one another
 This is our first, brave step, towards our end-goal.    
 Getting our idea, around the data provided around us, then using the proper skillset and techniques, <i>(also provided abundantely with the fine example of IBM's courses)</i>, in order to have that idea tell a story.  
 A Digital Story of a Data Scientist.
+<br><br><br>
+[Back to top](#Top)
 
 <a id='PartThree'></a>
 ****
@@ -130,6 +139,91 @@ Also, a visual representation of the above method, also serves the purpose to ge
 <br>
 <i>Toronto Map with visual Clusters</i><br>
 <img src="Images/torkmeansmap.jpg"><br>
+<br><br><br>
+[Back to top](#Top)
+
+#### 3.2 EDA
+
+As we dive deeper into the data presented, we can start to present more visual aids to explore further on.<br>
+###### Note:
+<i> As this project was executed during the time of the pandemic of COVID-19, and effectivelly, a global lockdown, the  results can be recalculated and further analyzed at a later time, to provide more insights</i>
+
+* Here, we can see how many Venues per category, in pure numbers, exist in our cities.<br><br>
+<i> NYC Most Common Venues</i>
+<img src="Images/nycvenuesbar.jpg"><br>
+<br>
+<i> Toronto Most Common Venues</i>
+<img src="Images/torvenuesbar.jpg"><br><br>
+
+* Below we can see in how many Neighbourhoods each Venue category is found.<br><br>
+<i> NYC Most Common Venues Neighbourhood appearance</i>
+<img src="Images/nycvenuesneighbbar.jpg"><br>
+<br>
+<i> Toronto Most Common Venues Neighbourhood appearance</i>
+<img src="Images/torvenuesneighbbar.jpg"><br><br>
+
+* Following the same direction, let's visualize the top Venues for both cities, combined.<br><br>
+<i> NYC & Toronto Most Common Venues</i>
+<img src="Images/nyctorvenuesbar.jpg"><br>
+<br><br>
+[Back to top](#Top)
+
+<a id='PartFour'></a>
+****
+#### 4. Results & Discussion
+****
+
+#### 4.1 Results<br>
+******
+**Note:**<br>
+<i>As we approach the subject more and more, it's apparend that the impact from the current global lockdown due to the pandemic is messing with our data. <br>
+Well, to be more precise, and honest towards the data, they are actually showing us the 'current image' of the two cities, thus being more aligned with the times we are going through.<br>
+There is a strong urge to follow up this analysis when we are, once again, in a more 'normal' day-to-day life-cycle, as  a whole.</i>
+*****
+<br><br>
+Other than that, using everything we have so far, we can, finally, combine our two sets, with their Top10 Venues and cluster them all together to really get the idea of how similar (or not!) our two cities neighbourhoods' are.
+
+* Using K-Means clustering techniques, we have our now complete data set from both cities and their clustering, as shown below. <br>
+<i>The Neighbourhoods can be destinquished from their suffix.</i><br><br>
+<i> Example of the combined and structured data set</i><br>
+<img src="Images/bothtop10.jpg"><br>
+
+* Below is a graphical presentation of the Clusters and their Neighbourhoods from each city.<br><br>
+<i> Bar Chart on the Clusters and the Neighbourhood per City distribution</i><br>
+<img src="Images/clustersbar.jpg"><br>
+
+#### 4.2 Discussion<br>
+
+Let's take a closer look at the distributed Venues per Cluster.<br><br>
+<img src="Images/clustersall.jpg"><br>
+
+As we can easily pinpoint from the above table sets, the current status quo has indeed been the main ingredient of our data results.<br>
+There are some basic groups of Venue Categories, spread throughout our Neighbourhoods, but also, in a disctinct way between the Clusters.<br>
+This can be interpreted as the current day-to-day life in those Clusters/Neighbourhoods, and what their residents have available to visit at this time.<br>
+There is the case of Cluster 5 as well, which is compromised entirelly by the current state of affairs.<br><br>
+I have the need to state once again that this analysis and approach will get entirelly different results if performed at a later time. Such an action is already in our plans, to get further insights on the "next day" after the lockdown.
+<br><br>
+[Back to top](#Top)
+
+<a id='PartFive'></a>
+****
+#### 5. Conclusion
+****
+
+The basic notion of this endeavour was to find similarities between the Neighbourhoods of New York City and Toronto.<br>
+I believe that this has been achieved.<br>
+Now, it is entirelly different to "achieve" the afformentioned end-goal and to actually see meaningfull information from the former.<br> 
+It is one thing to have ones work, methods, code applied successfully in a topic and a totally different thing for it's results to have impact.<br>
+In a sense, for the writer, both have been achieved. This has been a journey like no other, trying to make code to do all the above tasks, and perform as expected.
+
+It is clear that there are in fact similarities between our two cities Neighbourhoods, and we will continue to peruse this project with regular updates as the world inches away from this state.<br>
+The idea of someone using this tool is still valid, for business perpuses or personal, academic or otherwise.<br>
+We can see the picture forming there and the idea of expanding, and perhaps automating, such a look through two cities and their Neighbourhoods is very much appealing.<br>
+<br>
+This has been a great journey, I hope to see you again, on the next one!<br><br>
+Stay Safe!
+<br><br>
+[Back to top](#Top)
 
 
 ```python
