@@ -3,8 +3,11 @@
 
 ### Project Title: Clustering for Similarities in NYC & Toronto<br><br>
 #### Table of Contents
-1. [1. Introduction & Problem Statement](#PartOne)
-2. [2. Data Acquisition & Preparation](#PartTwo)
+1. [Introduction & Problem Statement](#PartOne)
+2. [Data Acquisition & Preparation](#PartTwo)
+3. [Methodology & EDA](#PartThree)
+4. [Results & Discussion](#PartFour)
+3. [Conclusion](#PartFive)
 
 <a id='PartOne'></a>
 ****
@@ -33,7 +36,7 @@ I hope you enjoy our journey!
 ##### 2.1 Data Acquisition
 We have in our disposal two basic data structures to handle; the first being our 'Neighbourhood Data' and the second, our 'Venues Data'.
 - **A. Neighbourhood Data**
-
+<br>
 <i> Example location data in json format</i>
 
 <img src="Images/jsonlocdata.jpg">
@@ -41,7 +44,7 @@ The datasets used for our two cities came from two (2) different sources; for NY
 - **B. Venues Data**
 
 Here we used FourSquare's API to obtain information about the venues in our cities' neighbourhoods. They consist of many different information fields, but using the right code parameters, we got just the needed fields. FourSquare is one of the largest location and venue data sources and their API was utilized to demonstrate our project idea.<br>
-<i> Example of the returned venues data, before any manipulation </i>
+<i> Example of the returned venues data, before any manipulation </i><br>
 
 <img src="Images/venuedata.jpg">
 
@@ -52,14 +55,14 @@ Here we used FourSquare's API to obtain information about the venues in our citi
  - ***New York City***  
  As stated above, the dataset for NYC's neighbourhoods were provided by the course's staff. It came in a <i>.json</i> format file, with all the required information we need to divide up the city by it's inner territories. Storing the data in a <i>Panda's Dataframe</i> with the the needed data wrangling techniques, gave us the desired result. With the final data at hand, we are now able to "explore" NYC's neighbourhoods, at least in a basic, for now, way.
  
-<i> Example of the NYC data with coords </i>
+<i> Example of the NYC data with coords </i><br>
 <img src="Images/nyfirstdata.jpg">
 
  
  - ***Toronto***  
  For Toronto, we had to get our hands more "dirty", in order to compile the desired data structure. The information was provided via the Wikipedia page for Toronto's neighbourhoods ([wiki link](https://en.wikipedia.org/w/index.php?title=List_of_postal_codes_of_Canada:_M&oldid=942851379)), but on an earlier version state than the current, because of the data format used now on the wiki page, being incompatible for scraping <i>(or at least our current techniques!)</i>. This came, as epected, in <i>.html</i> format. Next, using a dataset provided yet again by the course's staff containing each of Toronto's neighbourhood' corresponding Post Code along with their respective lat/lng coordinates, in <i>.csv</i> format. Combining the two sets with the proper parameters and cleaning, the desired data structure was at our disposal.<br>
  
-<i> Example of the Toronto data with coords </i>
+<i> Example of the Toronto data with coords </i><br>
 <img src="Images/torontofirstdata.jpg">
 
 **A. Venues data**  
@@ -94,6 +97,41 @@ This is our first, brave step, towards our end-goal.
 Getting our idea, around the data provided around us, then using the proper skillset and techniques, <i>(also provided abundantely with the fine example of IBM's courses)</i>, in order to have that idea tell a story.  
 A Digital Story of a Data Scientist.
 
+<a id='PartThree'></a>
+****
+#### 3. Methodology & EDA
+****
+
+#### 3.1 Methodology
+<br>
+In this section we'll discuss the Methods used in order to achieve the end-goal. <br>
+First of all, we needed to have our two datasets in a similar structure. That is because of the amount of values returned for each city/neighbourhood for Venues. <br><br>
+<i> Quick glance at the initial dataframes shapes</i><br>
+<img src="Images/origindatashape.jpg">
 
 
+Having roughly **480** venues for NYC and **340** for Toronto, it's clear that direct comparisons would be hard to achieve accurate results.<br>
+Thus, we applied the following:<br>
+Using data manipulation techniques in order to group our results in a more consice way, first we used one-hot encoding, in order to have a common variable to compare between values (Venues) in both datasets.<br>
+<img src="Images/onehotcodeex.jpg"><br>
+As shown above, the values in each row (Neighbourhood) now are in a scale of 0 to 1, representing the mean value of them all.<br>
+This enabled us to achieve an even more consice way to represent our data, with an ordered way. Meaning, we could easily extract the Top10 Venues per Neighbourhood.<br><br>
+<i> Example of the Top10 Tables for each City</i><br>
+<img src="Images/nyctortop10.jpg"><br>
+This enables us to use each data set for further, simpler comparison between them. Also, we can explore both sets individually to get more information for each Neighbourhood and bring everything together at the end, with a more impactfull way.
 
+#### Further Analysis on individual City data
+
+We used K-Means Clustering in order to provide more meaningful information about each City and their respective Neighbourhoods. We were able to group together Neighbourhoods with similar venue-structures and this gives us a first glance that things start to come together.<br>
+Also, a visual representation of the above method, also serves the purpose to get the message across.<br>
+<br>
+<i>NYC Map with visual Clusters</i><br>
+<img src="Images/nyckmeansmap.jpg"><br>
+<br>
+<i>Toronto Map with visual Clusters</i><br>
+<img src="Images/torkmeansmap.jpg"><br>
+
+
+```python
+
+```
