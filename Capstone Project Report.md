@@ -35,13 +35,15 @@ We have in our disposal two basic data structures to handle; the first being our
 - **A. Neighbourhood Data**
 
 <i> Example location data in json format</i>
-![jsonlocdata.jpg](attachment:jsonlocdata.jpg)
+
+<img src="files/Images/jsonlocdata.jpg">
 The datasets used for our two cities came from two (2) different sources; for NYC, they were provided by the staff of IBM's "Data Science Professional Certificate" and for Toronto, internet scraping was used. For both, the data acquired consist of major, albeit basic, information such as Neighbourhood, Borough, Latitude and Longitude coordinates.
 - **B. Venues Data**
 
 Here we used FourSquare's API to obtain information about the venues in our cities' neighbourhoods. They consist of many different information fields, but using the right code parameters, we got just the needed fields. FourSquare is one of the largest location and venue data sources and their API was utilized to demonstrate our project idea.<br>
 <i> Example of the returned venues data, before any manipulation </i>
-![venuedata.jpg](attachment:venuedata.jpg)
+
+<img src="files/Images/venuedata.jpg">
 
 ##### 2.2 Data Preparation
 
@@ -51,15 +53,14 @@ Here we used FourSquare's API to obtain information about the venues in our citi
  As stated above, the dataset for NYC's neighbourhoods were provided by the course's staff. It came in a <i>.json</i> format file, with all the required information we need to divide up the city by it's inner territories. Storing the data in a <i>Panda's Dataframe</i> with the the needed data wrangling techniques, gave us the desired result. With the final data at hand, we are now able to "explore" NYC's neighbourhoods, at least in a basic, for now, way.
  
 <i> Example of the NYC data with coords </i>
-![nyfirstdata.jpg](attachment:nyfirstdata.jpg)
+<img src="files/Images/nyfirstdata.jpg">
 
  
  - ***Toronto***  
  For Toronto, we had to get our hands more "dirty", in order to compile the desired data structure. The information was provided via the Wikipedia page for Toronto's neighbourhoods ([wiki link](https://en.wikipedia.org/w/index.php?title=List_of_postal_codes_of_Canada:_M&oldid=942851379)), but on an earlier version state than the current, because of the data format used now on the wiki page, being incompatible for scraping <i>(or at least our current techniques!)</i>. This came, as epected, in <i>.html</i> format. Next, using a dataset provided yet again by the course's staff containing each of Toronto's neighbourhood' corresponding Post Code along with their respective lat/lng coordinates, in <i>.csv</i> format. Combining the two sets with the proper parameters and cleaning, the desired data structure was at our disposal.<br>
  
 <i> Example of the Toronto data with coords </i>
-
-![torontofirstdata.jpg](attachment:torontofirstdata.jpg)
+<img src="files/Images/torontofirstdata.jpg">
 
 **A. Venues data**  
 
@@ -68,25 +69,26 @@ Retrieving data and then going through all the notions to get them in the format
 
 
 <i>The final piece of one-line code, calling all the internal functions</i><br>
-![finalfunctioncall.jpg](attachment:finalfunctioncall.jpg)
+<img src="files/Images/finalfunctioncall.jpg">
 
 In further detail, first we defined the proper way to "talk" to FourSquare <i>(function get_near_by_venues)</i> and retrieve the basic data for our Venues, Venue Name & Category and lat/lng coordinates, in respect to their neighbourhoods.
 
 
 <i>the 1st function in line, gets us the venue data</i>
-![function1.jpg](attachment:function1.jpg)
+<img src="files/Images/function1.jpg">
 
 Then, defining our one-hot encoding techniques and data normalization, the data now are grouped and transformed in a way that is easier for us to understand and manipulate further. <i>(functions explore_borough and return_venues_for_boroughs)</i>
 
 
 <i>The 2 next pieces of predefined code functions, completing our functions</i>
-![function2.jpg](attachment:function2.jpg)![function3.jpg](attachment:function3.jpg)
+<img src="files/Images/function2.jpg"><img src="files/Images/function3.jpg">
+
 
 Finally, both datasets were in a format that was not just aligned to one another, but also provided useful information, again, within a few lines of code and the backing power of Python and Object Oriented Programming Design, with the use of functions to be used generally and on the spot.
  
  
 <i>Our returned data, with a simple line of code</i>
-![functionsdatareturn.jpg](attachment:functionsdatareturn.jpg)
+<img src="files/Images/functionsdatareturn.jpg">
  
 This is our first, brave step, towards our end-goal.    
 Getting our idea, around the data provided around us, then using the proper skillset and techniques, <i>(also provided abundantely with the fine example of IBM's courses)</i>, in order to have that idea tell a story.  
